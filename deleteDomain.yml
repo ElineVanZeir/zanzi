@@ -1,3 +1,9 @@
+---
+- name: delete domain
+  hosts: all
+  become: yes
+
+  tasks:
     - name: Delete a zanzibar.weatherhub.be A record to point to 127.0.0.1
       community.dns.hetzner_dns_record:
         state: absent
