@@ -1,3 +1,9 @@
+---
+- name: make domain
+  hosts: all
+  become: yes
+
+  tasks:
     - name: Create a zanzibar.weatherhub.be A record to point to 127.0.0.1
       community.dns.hetzner_dns_record:
         state: present
